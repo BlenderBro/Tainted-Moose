@@ -193,6 +193,7 @@ jQuery.trumbowyg = {
                 async: true,
                 type: 'GET',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				headers: {'Access-Control-Allow-Origin': '*',},
                 dataType: 'xml',
                 crossDomain : true,
                 url: svgPathOption,
