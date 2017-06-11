@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+header("Access-Control-Allow-Origin: X-Requested-With");
+header("Access-Control-Allow-Headers: X-Requested-With");
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
