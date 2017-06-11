@@ -1,5 +1,8 @@
 <?php
 
+// CORS
+header('Access-Control-Allow-Origin: http://secure-scrubland-50266.herokuapp.com');
+header('Access-Control-Allow-Credentials: true');
 
 Route::get('/', 'PortfolioController@index');
 

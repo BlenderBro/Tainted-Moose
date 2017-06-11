@@ -195,7 +195,7 @@ jQuery.trumbowyg = {
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 dataType: 'xml',
                 headers:{
-                    'Access-Control-Allow-Origin':'X-Requested-With',
+                    'Access-Control-Allow-Origin':'http://secure-scrubland-50266.herokuapp.com',
                     'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE, OPTIONS',
                     'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept',
                 },
