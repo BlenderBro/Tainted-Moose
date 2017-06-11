@@ -17,7 +17,8 @@ header("Access-Control-Allow-Headers: X-Requested-With");
     <!-- Styles -->
 
     <link href="{{ secure_asset('/css/app.css')}}" rel="stylesheet">
-	<link rel="stylesheet" href="{{ secure_asset('/css/trumbowyg.css')}}">
+	{{--<link rel="stylesheet" href="{{ secure_asset('/css/trumbowyg.css')}}">--}}
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -89,9 +90,8 @@ header("Access-Control-Allow-Headers: X-Requested-With");
     <!-- Scripts -->
     <script src="{{secure_asset('/js/app.js')}}"></script>
 	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
-	<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>
-	<script type="text/javascript">
-		$('#body').trumbowyg();
-	</script>
+	{{--<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>--}}
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </body>
 </html>
