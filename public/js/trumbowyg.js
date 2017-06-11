@@ -193,7 +193,7 @@ jQuery.trumbowyg = {
                 async: true,
                 type: 'GET',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                dataType: 'jsonp',
+                dataType: 'xml',
                 headers:{
                     'Access-Control-Allow-Origin':'X-Requested-With',
                     'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE, OPTIONS',
