@@ -83,11 +83,7 @@
     </div>
 
     <!-- Scripts -->
-<<<<<<< HEAD
     <script src="{{secure_asset('/js/app.js')}}"></script>
-=======
-    <script src="{{ secure_asset('/js/app.js')}}"></script>
->>>>>>> 9d37685d36d8e72f6f947c619e7f65039b174e4a
 	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
 	<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>
 	<script type="text/javascript">
