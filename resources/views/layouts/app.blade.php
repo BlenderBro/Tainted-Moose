@@ -87,7 +87,9 @@
 	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
 	<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>
 	<script type="text/javascript">
-		$('#body').trumbowyg();
+		$('#body').trumbowyg({
+    		svgPath: '/js/ui/icons.svg'
+});
 	</script>
 </body>
 </html>
