@@ -70,6 +70,8 @@
 <!-- Theme JavaScript -->
 <script src="{{ asset('/js/freelancer.min.js')}}"></script>
 
+
+
 </body>
 
 </html>

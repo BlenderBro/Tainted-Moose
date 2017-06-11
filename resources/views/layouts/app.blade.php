@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/trumbowyg.css">
 
     <!-- Scripts -->
     <script>
@@ -36,7 +37,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Portofoliu' lu' Sabrina
                     </a>
                 </div>
 
@@ -83,5 +84,10 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+	<script src="{{ asset('/js/jquery.min.js')}}"></script>
+	<script src ="{{ asset('/js/trumbowyg.js')}}"></script>
+	<script type="text/javascript">
+		$('#body').trumbowyg();
+	</script>
 </body>
 </html>

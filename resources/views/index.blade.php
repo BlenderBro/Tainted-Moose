@@ -26,16 +26,23 @@
 			</div>
 		</div>
 		<div class="row">
+		@if ( !$items->count(3) )
+			<h1>Silence is golden.</h1>
+			<p>Nothing to see here</p>
+			@else
+			@foreach ($items as $item)
 			<div class="col-sm-4 portfolio-item">
-				<a href="/portfolio-item" class="portfolio-link" data-toggle="modal">
+				<a href="{{ url('/item/'.$item->slug) }}" class="portfolio-link" data-toggle="modal">
 					<div class="caption">
 						<div class="caption-content">
 							<i class="fa fa-search-plus fa-3x"></i>
 						</div>
 					</div>
-					<img src="img/portfolio/Project_1_ING.png" class="img-responsive" alt="">
+					<img src="/uploads/{{ $item->featured_image }}" class="img-responsive" alt="">
 				</a>
 			</div>
+			@endforeach
+		@endif
 		</div>
 	</div>
 </section>
