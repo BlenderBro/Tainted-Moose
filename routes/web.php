@@ -9,7 +9,7 @@ Auth::routes();
 
 Route::get('/admin', ['middleware' => 'cors', 'uses' => 'HomeController@index']);
 
-Route::post('add-item', 'PortfolioController@store');
+Route::post('add-item', ['middleware' => 'cors', 'uses' =>'PortfolioController@store']);
 
 Route::get('item/{slug}', [
     'as' => 'item', 'uses' => 'PortfolioController@show'
