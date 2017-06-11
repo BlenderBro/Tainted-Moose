@@ -12,7 +12,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Admin Sabrina') }}</title>
+    <title>Admin Sabrina</title>
 
     <!-- Styles -->
 
