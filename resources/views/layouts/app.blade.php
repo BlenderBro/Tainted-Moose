@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php header('Access-Control-Allow-Origin: *'); ?>
+<?php header('Access-Control-Allow-Origin: x-requested-with'); ?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
