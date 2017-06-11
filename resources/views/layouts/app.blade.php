@@ -8,11 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Admin Sabrina') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-	<link rel="stylesheet" href="/css/trumbowyg.css">
+    <link href="{{secure_asset('/css/app.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="{{secure_asset('/css/trumbowyg.css')}}">
 
     <!-- Scripts -->
     <script>
@@ -83,9 +83,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-	<script src="{{ asset('/js/jquery.min.js')}}"></script>
-	<script src ="{{ asset('/js/trumbowyg.js')}}"></script>
+    <script src="{{secure_asset('/js/app.js')}}"></script>
+	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
+	<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>
 	<script type="text/javascript">
 		$('#body').trumbowyg();
 	</script>
