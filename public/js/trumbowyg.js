@@ -195,7 +195,7 @@ jQuery.trumbowyg = {
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 dataType: 'xml',
                 headers:{
-                    'Access-Control-Allow-Origin':'X-Requested-With',
+                    'Access-Control-Allow-Origin':'*',
                     'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE, OPTIONS',
                     'Access-Control-Allow-Headers':'Content-Type, Accept, Authorization, X-Requested-With, Application',
                 },
