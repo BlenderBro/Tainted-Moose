@@ -90,8 +90,12 @@ header("Access-Control-Allow-Headers: X-Requested-With");
     <!-- Scripts -->
     <script src="{{secure_asset('/js/app.js')}}"></script>
 	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
-	{{--<script src ="{{ secure_asset('/js/trumbowyg.js')}}"></script>--}}
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({
+            selector:'textarea',
+            height: 300,
+            theme: "modern"
+        });
+    </script>
 </body>
 </html>
