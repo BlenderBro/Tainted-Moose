@@ -75,16 +75,29 @@ class PortfolioController extends Controller
 		return view('portfolio-item', compact('item'))->with($slug);
     }
 
+	/**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function allItems()
+    {
+        $items = PortfolioItem::orderBy('updated_at', 'desc')->get();
+		return view('all-items', compact('items'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+	 public function edit(Request $request, $slug)
+     {
+         $item = PortfolioItem::where('slug',$slug)->first();
+         return view('edit-item')->with('item',$item);
+     }
 
     /**
      * Update the specified resource in storage.

@@ -36,22 +36,27 @@
     <div class="row">
         <div class="col-md-11 col-centered">
             <div class="panel panel-default">
-                <div class="panel-heading">Adauga.. <p><a style="float:right;font-weight:700;" href="{{ URL('/all-items')}}">ALL ITEMS</a></p></div>
+                <div class="panel-heading">Editeaza @if(!old('title')){{$item->title}}@endif{{ old('title') }}<p><a style="float:right;font-weight:700;" href="#">ALL ITEMS</a></p></div>
 
                 <div class="panel-body">
                     <form class="" action="{{ action('PortfolioController@store') }}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div style="margin-bottom: 3em;margin-top: 2em;" class="form-inline">
 						    <label style="margin-right:1em;" for="exampleInputEmail1">Titlu</label>
-						    <input style="min-width:18em;" type="text" class="form-control" name="title" id="title" placeholder="Titlul lucrarii">
+						    <input style="min-width:18em;" type="text" class="form-control" name="title" id="title" value="@if(!old('title')){{$item->title}}@endif{{ old('title') }}">
 							<label style="margin-right:1em;margin-left:1em;" for="exampleInputEmail1">Client</label>
-						    <input style="min-width:18em;" type="text" class="form-control" name="client" id="client" placeholder="Cine e clientul">
+						    <input style="min-width:18em;" type="text" class="form-control" name="client" id="client" value="@if(!old('client')){{$item->client}}@endif{{ old('client') }}">
 							<label style="margin-right:1em;margin-left:1em;" for="exampleInputEmail1">Service</label>
-						    <input style="min-width:18em;" type="text" class="form-control" name="services" id="services" placeholder="Serviciile prestate">
+						    <input style="min-width:18em;" type="text" class="form-control" name="services" id="services" value="@if(!old('services')){{$item->services}}@endif{{ old('services') }}">
 						</div>
 
 						<div class="form-group">
-						    <textarea type="text" class="form-control" name="body" id="body" placeholder="Daca paste, clear format ;)"></textarea>
+						    <textarea type="text" class="form-control" name="body" id="body">
+								@if(!old('body'))
+                                    {!! $item->body !!}
+                              	@endif
+                      			{!! old('body') !!}
+						    </textarea>
 						</div>
 						<div class="form-group">
 						    <label for="exampleInputFile">Logo ONLY! (for naw..)</label>
