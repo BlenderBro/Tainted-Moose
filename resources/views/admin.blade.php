@@ -41,7 +41,7 @@
                 <div class="panel-body">
                     <form class="" action="{{ action('PortfolioController@store') }}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<div class="form-inline">
+						<div style="margin-bottom: 3em;margin-top: 2em;" class="form-inline">
 						    <label style="margin-right:1em;" for="exampleInputEmail1">Titlu</label>
 						    <input style="min-width:18em;" type="text" class="form-control" name="title" id="title" placeholder="Titlul lucrarii">
 							<label style="margin-right:1em;margin-left:1em;" for="exampleInputEmail1">Client</label>
