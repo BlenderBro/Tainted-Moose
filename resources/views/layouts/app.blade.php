@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<?php
-header("Access-Control-Allow-Origin: X-Requested-With");
-header("Access-Control-Allow-Headers: X-Requested-With");
-?>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -16,7 +13,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 
     <!-- Styles -->
 
-    <link href="{{ secure_asset('/css/app.css')}}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 	{{--<link rel="stylesheet" href="{{ secure_asset('/css/trumbowyg.css')}}">--}}
 
     <!-- Scripts -->
