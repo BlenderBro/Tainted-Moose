@@ -10,6 +10,10 @@ Route::get('/', 'PortfolioController@index');
 
 Auth::routes();
 
+Route::get('/404', function ()
+{
+    return view('errors.404');
+});
 Route::get('/admin', ['middleware' => 'cors', 'uses' => 'HomeController@index']);
 
 Route::post('add-item', ['middleware' => 'cors', 'uses' =>'PortfolioController@store']);
