@@ -85,8 +85,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{secure_asset('/js/app.js')}}"></script>
-	<script src="{{ secure_asset('/js/jquery.min.js')}}"></script>
+    <script src="/js/app.js"></script>
+	<script src="/js/jquery.min.js"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea',
