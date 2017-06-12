@@ -54,9 +54,9 @@
 						    <textarea type="text" class="form-control" name="body" id="body" placeholder="Daca paste, clear format ;)"></textarea>
 						</div>
 						<div class="form-group">
-						    <label for="exampleInputFile">Featured Image/logo (maybe?)</label>
+						    <label for="exampleInputFile">Logo ONLY! (for naw..)</label>
 						    <input type="file" class="form-control-file" name="featuredimg" id="featuredimg" aria-describedby="fileHelp">
-						    <small id="fileHelp" class="form-text text-muted">Asta e imaginea care apare in capul "articolului". Restul imaginilor le poti urca cu insert image din editor.</small>
+						    <small id="fileHelp" class="form-text text-muted">Asta e imaginea care apare in capul "articolului" si in thumbnail-uri pe prima pagina. Restul imaginilor le poti urca cu insert image din editor.</small>
 						</div>
 						<div class="pull-right">
 					 		<input type="submit" name="save" class="btn btn-success" value="Posteaza">
