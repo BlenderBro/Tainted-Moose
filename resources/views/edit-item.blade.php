@@ -36,11 +36,12 @@
     <div class="row">
         <div class="col-md-11 col-centered">
             <div class="panel panel-default">
-                <div class="panel-heading">Editeaza @if(!old('title')){{$item->title}}@endif{{ old('title') }}<p><a style="float:right;font-weight:700;" href="#">ALL ITEMS</a></p></div>
+                <div class="panel-heading">Editeaza @if(!old('title')){{$item->title}}@endif{{ old('title') }}<p><a style="float:right;font-weight:700;" href="{{ URL('/all-items')}}">ALL ITEMS</a></p></div>
 
                 <div class="panel-body">
-                    <form class="" action="{{ action('PortfolioController@store') }}" method="POST" enctype="multipart/form-data">
+                    <form class="" action="{{ action('PortfolioController@update') }}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="item_id" value="{{ $item->id }}{{ old('item_id') }}">
 						<div style="margin-bottom: 3em;margin-top: 2em;" class="form-inline">
 						    <label style="margin-right:1em;" for="exampleInputEmail1">Titlu</label>
 						    <input style="min-width:18em;" type="text" class="form-control" name="title" id="title" value="@if(!old('title')){{$item->title}}@endif{{ old('title') }}">

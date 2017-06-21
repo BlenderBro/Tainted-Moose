@@ -32,8 +32,13 @@
 	.image-preview-input-title {
 	margin-left:2px;
 	}
+	table tr td:last-child {
+    white-space: nowrap;
+    width: 1px;
+}
 </style>
 <div class="container">
+	<h1>All Items</h1>
 <div class="row">
 	<div class="col-md-11 col-centered">
 		<div class="panel panel-default">
@@ -43,7 +48,6 @@
       <th>#</th>
       <th>Title</th>
       <th>Client</th>
-      <th>Content blob</th>
 	  <th>Actions</th>
     </tr>
   </thead>
@@ -54,8 +58,12 @@
       <th scope="row">1</th>
       <td>{{$item->title}}</td>
       <td>{{$item->client}}</td>
-      <td><?php strlen($item->body)>200 ?></td>
-	  <td>foo</td>
+	  <td>
+		  	<div>
+				<a href="{{ url('edit-item/'.$item->slug)}}" type="button" class="btn btn-success">Edit</a>
+				<a href="{{ url('delete/'.$item->id.'?_token='.csrf_token())}}" type="button" class="btn btn-danger">Delete</a>
+			</div>
+	  </td>
     </tr>
 
 		@endforeach

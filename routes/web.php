@@ -20,8 +20,10 @@ Route::get('/404', function ()
 Route::get('/admin', ['middleware' => 'cors', 'uses' => 'HomeController@index']);
 Route::post('add-item', ['middleware' => 'cors', 'uses' =>'PortfolioController@store']);
 Route::get('/all-items', ['middleware' => 'cors', 'uses' =>'PortfolioController@allItems']);
-
-Route::post('edit-item/{slug}', ['middleware' => 'cors', 'uses' =>'PortfolioController@edit']);
+Route::post('/update',  ['middleware' => 'cors', 'uses' =>'PortfolioController@update']);
+Route::get('edit-item/{slug}', ['middleware' => 'cors', 'uses' =>'PortfolioController@edit']);
+Route::get('delete/{id}', ['middleware' => 'cors', 'uses' =>'PortfolioController@destroy']);
+Route::post('send-mail', 'PortfolioController@sendMail');
 
 Route::get('item/{slug}', [
     'as' => 'item', 'uses' => 'PortfolioController@show'

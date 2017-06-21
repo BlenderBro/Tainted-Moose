@@ -8,6 +8,23 @@ use Image;
 
 class PortfolioController extends Controller
 {
+	public function sendMail()
+	{
+		$name = strip_tags(htmlspecialchars($_POST['name']));
+		$email_address = strip_tags(htmlspecialchars($_POST['email']));
+		$phone = strip_tags(htmlspecialchars($_POST['phone']));
+		$message = strip_tags(htmlspecialchars($_POST['message']));
+
+		// Create the email and send the message
+		$to = 'vlad.s.dobrescu@gmail.com';
+		$email_subject = "Website Contact Form:  $name";
+		$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+		$headers = "From: noreply@sabrinavlasceanu.com\n";
+		$headers .= "Reply-To: $email_address";
+		mail($to,$email_subject,$email_body,$headers);
+		return true;
+		}
+	}
     /**
      * Display a listing of the resource.
      *
@@ -106,9 +123,43 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+		$item_id = $request->input('item_id');
+        $item = PortfolioItem::find($item_id);
+
+        $title = $request->input('title');
+        $slug = str_slug($title);
+        $duplicate = PortfolioItem::where('slug',$slug)->first();
+
+        if($duplicate)
+        {
+            if($duplicate->id != $item_id)
+            {
+                return redirect('/edit-item'.$item->slug)->withErrors('Title already exists.')->withInput();
+            }
+            else
+            {
+                $item->slug = $slug;
+            }
+        }
+        $item->title = $title;
+		$item->client = $request->input('client');
+		$item->services = $request->input('services');
+        $item->body = $request->input('body');
+
+        if($request->hasFile('featuredimg'))
+            {
+                $avatar = $request->file('featuredimg');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                $path = 'uploads/' .$filename;
+                Image::make($avatar->getRealPath())->save($path);
+                $item->featured_image = $filename;
+            }
+
+        $item->save();
+
+        return view('edit-item')->with('item',$item);
     }
 
     /**
@@ -117,8 +168,15 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+		$data = PortfolioItem::find($id);
+        if (!is_null($data)) {
+            $data->delete();
+        }
+        // TODO: flash something on delete
+
+        $items = PortfolioItem::orderBy('updated_at','desc')->get();
+        return view('all-items', compact('items'));
     }
 }
